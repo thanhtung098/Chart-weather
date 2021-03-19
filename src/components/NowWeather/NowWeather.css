@@ -1,0 +1,57 @@
+.now-weather {
+    color: #fff;
+    width: 220px;
+    margin: 20px auto;
+    position: relative;
+    padding-left: 62px;
+}
+.status-weather {
+    color: #fff;
+    font-size: 26px;
+}
+.temp-weather-percent {
+    color: #fff;
+    font-size: 14px;
+    margin-top: 5px;
+    position: relative;
+}
+.temp-weather-percent  span {
+    font-size: 16px;
+}
+.temp-text {
+    margin-right: 20px;
+}
+.list-function{
+    position: absolute;
+    bottom: -18px;
+    width: 100%;
+    overflow-x: scroll;
+
+}
+.list-function ul {
+    display: flex;
+    padding-left: 0;
+}
+.list-function ul li {
+    list-style-type: none;
+    text-align: center;
+    border-right: solid 1px #fff;
+    padding: 0 10px;
+    min-width: 85px;
+}
+.list-function ul li span {
+    display: block;
+    color: #fff;
+    padding: 4px;
+    
+}
+.temp-text img{
+    width: 9px;
+    margin-right: 12px;
+    vertical-align: center;
+}
+.temp-text-humidity img{
+    width: 13px;
+    margin-right: 12px;
+    vertical-align: center;
+}
