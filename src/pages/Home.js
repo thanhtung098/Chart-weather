@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback,  useState, useRef, useMemo } from 'react'
+import React, { useEffect, useState} from 'react'
 import Header from '../components/Header/Header'
 import WeatherChart from '../components/WeatherChart/WeatherChart'
 import NowWeather from '../components/NowWeather/NowWeather'

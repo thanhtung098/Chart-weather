@@ -1,5 +1,4 @@
-import React, { useEffect, useCallback, useState } from 'react'
-import { connect, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import './WeatherChart.css'
@@ -13,7 +12,7 @@ const WeatherChart = () => {
         return (<div>loading</div>)
     }
     dataWeather.dataWeather.content.map((data) => {
-        dataChart.push(data.dewpoint_c)
+        return dataChart.push(data.dewpoint_c)
     })
 
     const options = {
