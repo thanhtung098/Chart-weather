@@ -1,12 +1,15 @@
 import React from 'react'
-import { connect, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import './NowWeather.css'
 const NowWeather = (props) => {
     let dataCondition = {}
-    if(props.dataNowWeather === '' || props.dataNowWeather.length === 0) {
+    const data =  useSelector((state) => {
+        return state
+    })
+    if(data.dataWeather.dataNowWeather === '' || data.dataWeather.dataNowWeather.length === 0) {
         return (<div> Loading</div>)
     }
-    dataCondition = props.dataNowWeather
+    dataCondition = data.dataWeather.dataNowWeather
     return (
             <div>
                 <div className="now-weather">

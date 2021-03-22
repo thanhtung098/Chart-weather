@@ -6,7 +6,7 @@ import Map from '../components/Map/Map'
 import ListWeatherNextDay from '../components/ListWeatherNextDay/ListWeatherNextDay'
 import weatherApi from '../api/weatherApi.js'
 import { connect } from "react-redux"
-import { actGetListDataWeatherChart, actGetDataNowWeather } from '../actions'
+import { actGetListDataWeatherChart, actGetDataNowWeather, actGetDataListNextDayWeather } from '../actions'
 const Home = (props) => {
     const [content, setContent] = useState([])
     const [dataNowWeather, setDataNowWeather] = useState([])
@@ -24,10 +24,10 @@ const Home = (props) => {
             setContent(respone.data.forecast.forecastday[0].hour)
             setDataNowWeather(respone.data.current)
             setDataListNextDay(respone.data.forecast.forecastday)
-            setCheck(true)
             props.getListDataWeatherChart(content)
             props.getDataNowWeather(dataNowWeather)
-            props.getDataNowWeather(dataListNextDay)
+            props.getListDataNextDaywWeather(dataListNextDay)
+            setCheck(true)
         }
         
     }
@@ -37,7 +37,7 @@ const Home = (props) => {
     return (
         <div className="top-content">
             <Header></Header>
-            <NowWeather dataNowWeather= {dataNowWeather}></NowWeather>
+            <NowWeather></NowWeather>
             <WeatherChart></WeatherChart>
             <Map></Map>
             <ListWeatherNextDay dataListNextDay = {dataListNextDay}></ListWeatherNextDay>
@@ -51,6 +51,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         getDataNowWeather: (dataNowWeather) => {
             dispatch(actGetDataNowWeather(dataNowWeather))
+        },
+        getListDataNextDaywWeather: (dataListNextDay) => {
+            dispatch(actGetDataListNextDayWeather(dataListNextDay))
         },
     }
 }
